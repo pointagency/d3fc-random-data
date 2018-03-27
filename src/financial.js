@@ -27,13 +27,13 @@ export default function() {
         const period = getOffsetPeriod(start);
         const prices = gbm.period(period)(price);
         const ohlc = {
-            date: start,
-            open: prices[0],
-            high: Math.max.apply(Math, prices),
-            low: Math.min.apply(Math, prices),
-            close: prices[gbm.steps()]
+            DT: start,
+            Open: prices[0],
+            High: Math.max.apply(Math, prices),
+            Low: Math.min.apply(Math, prices),
+            Close: prices[gbm.steps()]
         };
-        ohlc.volume = volume(ohlc);
+        ohlc.Volume = volume(ohlc);
         return ohlc;
     };
 
